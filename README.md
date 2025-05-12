@@ -1,8 +1,4 @@
-Here’s your full **README** content with proper **Markdown markup** so you can copy and paste it directly into your project’s `README.md` file:
 
----
-
-````markdown
 # Readwise: Social Book Review Platform
 
 ## Overview
