@@ -1,47 +1,36 @@
 
-# Readwise: Social Book Review Platform
+# 📚 Readwise: Social Book Review Platform
 
-## Overview
+Readwise is a **Next.js (React)** web application developed as part of the research project:
 
-**Readwise** is a **Next.js (React)** web application designed as part of the research project:
+> _"Accelerating Book Recommendations: Real-Time Personalization on Social Review Platforms with FAISS and LDA"_
 
-> *"Accelerating Book Recommendations: Real-Time Personalization on Social Review Platforms with FAISS and LDA"*
-
-The platform enables users to discover, review, and discuss books through real-time, personalized recommendations powered by **FAISS** and **LDA**.
-
-Key features include:
-- User onboarding
-- Book recommendations
-- Thread creation
-- Social interactions (comments, ratings)
-- Purchase/rental system for books
-
-The frontend integrates with a backend API (e.g., xAI’s API) to fetch recommendations with **sub-50ms latency**, leveraging social signals (e.g., votes, comments) to enhance engagement.
+It enables users to discover, review, and discuss books through real-time, personalized recommendations powered by **FAISS** and **LDA**.
 
 ---
 
-## Features
+## 🚀 Features
 
-- 🚀 **Real-Time Recommendations**: Fetch personalized book suggestions in under 50ms using FAISS and LDA.
-- 🧭 **User Onboarding**: Multi-step onboarding process to initialize user preferences.
-- 💬 **Social Interactions**: Create threads, comment, and rate books.
-- 📚 **Book Discovery**: Search, explore trending books, and view detailed metadata and reviews.
-- 👤 **User Profiles**: Show user activity and personalized recommendations.
-- 💳 **Purchase/Rental System**: Rent or buy books directly within the app.
-- 🌗 **Responsive Design**: Built with Tailwind CSS, with theme switcher and custom fonts (Geist).
-
----
-
-## Prerequisites
-
-- **Node.js**: Version 18.x or higher
-- **npm**: For managing packages
-- **Backend API**: A running instance (e.g., https://x.ai/api)
-- **Fonts**: Ensure `GeistMonoVF.woff` and `GeistVF.woff` are in `app/fonts/`
+- ⚡ **Real-Time Recommendations**: Sub-50ms latency using FAISS and topic modeling (LDA).
+- 🧭 **User Onboarding**: Multi-step flow to initialize reading preferences.
+- 💬 **Social Interactions**: Thread creation, comments, and ratings on books.
+- 🔍 **Book Discovery**: Search, trending books, metadata, and reviews.
+- 👤 **User Profiles**: View personal threads and recommendation history.
+- 💳 **Purchase / Rental System**: Rent or buy books directly within the app.
+- 🌙 **Responsive UI**: Built with Tailwind CSS, dark/light theme switcher, and Geist fonts.
 
 ---
 
-## Setup Instructions
+## 🛠️ Prerequisites
+
+- **Node.js**: v18.x or higher
+- **npm**: For dependency management
+- **Backend API**: e.g., `https://x.ai/api`
+- **Fonts**: `GeistMonoVF.woff` and `GeistVF.woff` should be placed in `app/fonts/`
+
+---
+
+## ⚙️ Setup Instructions
 
 ### 1. Clone the Repository
 
@@ -56,95 +45,82 @@ cd readwise
 npm install
 ```
 
-### 3. Environment Variables
+### 3. Configure Environment Variables
 
-Create a `.env.local` file in the root directory and add clerk api
+Create a `.env.local` file in the root directory for clerk api
 
-### 4. Run the Development Server
+### 4. Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-Then open your browser and go to:
-👉 [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## Usage
+## 🧪 Usage
 
-### 🔐 Sign Up / Sign In
-
-Navigate to:
+### 🔐 Authentication
 
 * `/auth/sign-up`
 * `/auth/sign-in`
 
-Use the provided authentication flow.
-
-### 🚀 Onboarding
-
-Complete onboarding at `/auth/onboarding`:
+### 🧭 Onboarding (`/auth/onboarding`)
 
 1. `welcome.tsx` – Welcome screen
 2. `interests.tsx` – Select interests
-3. `recommendation.tsx` – View recommendations
-4. `final.tsx` – Finalize profile
+3. `recommendation.tsx` – Preview personalized recommendations
+4. `final.tsx` – Finalize and save preferences
 
-### 📖 Explore Books
+### 📚 Book Discovery
 
-* Browse trending books: `/discover`
-* Search for books: `/search`
-* View details: `/details/[id]`
-  Includes:
+* Trending: `/discover`
+* Search: `/search`
+* Book Details: `/details/[id]`
 
-  * `BookMetadataCard`
-  * `SampleReviewCard`
-  * `Comments`
+  * Includes: `BookMetadataCard`, `SampleReviewCard`, and `Comments`
 
-### 💬 Interact Socially
+### 💬 Community
 
 * Create threads: `/create-thread`
-* Comment on threads: `/thread/[id]`
+* View threads and engage: `/thread/[id]`
 * Rate books using the `Rating` component
 
-### 👤 Manage Profile
+### 👤 Profiles
 
-* View user profile: `/profile/[id]`
-* See user threads: `ThreadsTab`
+* View user activity: `/profile/[id]`
+* Explore personal threads via `ThreadsTab`
 
-### 💰 Purchase or Rent Books
+### 💸 Buy or Rent Books
 
 * Rent: `/rentals/[id]/[user_id]`
 * Buy: `/purchase/[id]/[user_id]`
 
 ---
 
-## Screenshots
+## 🖼️ Screenshots
 
-Screenshots available in the `ss/` folder:
+Located in the `ss/` folder:
 
-* `homepage.png` – Homepage
-* `onboarding.png` – Onboarding
-* `book-details.png` – Book details
-* `recommendations.png` – Recommendations
-* `profile.png` – Profile
+* `homepage.png`
+* `onboarding.png`
+* `book-details.png`
+* `recommendations.png`
+* `profile.png`
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 readwise/
 ├── app/
 │   ├── (auth)/
-│   │   ├── layout.tsx
 │   │   ├── onboarding/
 │   │   ├── sign-in/
 │   │   └── sign-up/
 │   ├── (root)/
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
 │   │   ├── create-thread/
 │   │   ├── details/[id]/
 │   │   ├── discover/
@@ -154,11 +130,8 @@ readwise/
 │   │   ├── search/
 │   │   └── thread/[id]/
 │   ├── fonts/
-│   ├── favicon.ico
-│   ├── globals.css
 │   └── ThemeProvider.tsx
 ├── components/
-│   ├── Rating.tsx
 │   ├── cards/
 │   ├── forms/
 │   ├── onboarding/
@@ -170,20 +143,8 @@ readwise/
 │   └── utils.ts
 ├── public/
 ├── ss/
-│   ├── homepage.png
-│   ├── onboarding.png
-│   ├── book-details.png
-│   ├── recommendations.png
-│   └── profile.png
 ├── .env.local
-├── .gitignore
-├── components.json
-├── middleware.ts
-├── next-env.d.ts
 ├── next.config.mjs
-├── package-lock.json
-├── package.json
-├── postcss.config.mjs
 ├── tailwind.config.ts
 ├── tsconfig.json
 └── README.md
@@ -191,36 +152,34 @@ readwise/
 
 ---
 
-## Scripts
+## 📦 Scripts
 
 * `npm run dev` – Start development server
 * `npm run build` – Build for production
-* `npm run start` – Start production server
+* `npm run start` – Launch production build
 
 ---
 
-## Technologies Used
+## 🧰 Technologies
 
 * **Next.js** – App Router, SSR, SSG
-* **React** – UI Components
-* **TypeScript** – Type-safe development
+* **React + TypeScript** – Component-driven development
 * **Tailwind CSS** – Utility-first styling
-* **Axios** – For API requests
-* **Geist Fonts** – Custom typography
+* **Axios** – For API communication
+* **Geist Fonts** – Custom font system
 
-### CDN Libraries
+#### CDN Fallbacks
 
-* React:
-  `https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js`
-* ReactDOM:
-  `https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js`
+* React: `https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js`
+* ReactDOM: `https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js`
 
 ---
 
-## API Integration
+## 🌐 API Integration
 
-**Endpoint:** `${NEXT_PUBLIC_API_URL}`
-**Example request payload:**
+**Endpoint:** 
+
+**Example Request:**
 
 ```json
 {
@@ -232,7 +191,7 @@ readwise/
 }
 ```
 
-**Example response:**
+**Example Response:**
 
 ```json
 [
@@ -246,16 +205,14 @@ readwise/
 
 ---
 
-## Backend Note
+## ⚠️ Note on Backend
 
-> This repository contains **only the frontend** of Readwise.
-> The **Flask-based backend**, handling FAISS/LDA recommendations and user data, will be released separately.
+> This repository contains **only the frontend**.
+> The **Flask-based backend**, including FAISS, LDA, and recommendation logic, will be released separately.
 
 ---
 
-## Deployment
-
-To build the app for production:
+## 🚀 Deployment
 
 ```bash
 npm run build
@@ -263,21 +220,13 @@ npm run build
 
 ---
 
-## License
+## 📄 License
 
 This project is licensed under the **MIT License**.
-See the [LICENSE](LICENSE) file for full details.
 
 ---
 
-## Contact
+## 📬 Contact
 
 Questions or feedback?
-Reach out to **oneAlive**.
-
-```
-
----
-
-Would you like help generating the LICENSE file or backend README as well?
-```
+Reach out to **@oneAlive** or open an issue.
