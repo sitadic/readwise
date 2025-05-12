@@ -46,7 +46,7 @@ The frontend integrates with a backend API (e.g., xAI’s API) to fetch recommen
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/readwise.git
+git clone https://github.com/one-Alive/readwise.git
 cd readwise
 ````
 
@@ -58,11 +58,7 @@ npm install
 
 ### 3. Environment Variables
 
-Create a `.env.local` file in the root directory and add the following:
-
-```env
-NEXT_PUBLIC_API_URL=https://your-api-url/api
-```
+Create a `.env.local` file in the root directory and add clerk api
 
 ### 4. Run the Development Server
 
